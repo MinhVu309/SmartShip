@@ -1,0 +1,26 @@
+# Visual Studio temporary files, build results, and
+# user-specific files
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.dbmdl
+*.mdb
+*.mdf
+*.ldf
+*.log
+*.cache
+*.pdb
+*.exe
+*.dll
+*.config
+packages/
+TestResults/
+Backup*/
+*.tmp
+*.bak
+
+# Entity Framework generated files
+Migrations/
+
