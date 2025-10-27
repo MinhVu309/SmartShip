@@ -179,10 +179,6 @@
     <Folder Include="Admin\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\MINHVU\DA\BUS\BUS.csproj">
-      <Project>{9c2d44e4-b236-4979-847f-fd2d0abecade}</Project>
-      <Name>BUS</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SmartShip.DAL\SmartShip.DAL.csproj">
       <Project>{579a137b-e16e-43eb-9152-a308ce716bdb}</Project>
       <Name>SmartShip.DAL</Name>
