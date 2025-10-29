@@ -118,11 +118,23 @@
     <Compile Include="QLKH\frmNguoiDung.Designer.cs">
       <DependentUpon>frmNguoiDung.cs</DependentUpon>
     </Compile>
+    <Compile Include="QLKH\frmNguoiDungEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLKH\frmNguoiDungEdit.Designer.cs">
+      <DependentUpon>frmNguoiDungEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="QLNV\frmTaiXe.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="QLNV\frmTaiXe.Designer.cs">
       <DependentUpon>frmTaiXe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLNV\frmTaiXeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLNV\frmTaiXeEdit.Designer.cs">
+      <DependentUpon>frmTaiXeEdit.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Login\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -160,8 +172,14 @@
     <EmbeddedResource Include="QLKH\frmNguoiDung.resx">
       <DependentUpon>frmNguoiDung.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QLKH\frmNguoiDungEdit.resx">
+      <DependentUpon>frmNguoiDungEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QLNV\frmTaiXe.resx">
       <DependentUpon>frmTaiXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLNV\frmTaiXeEdit.resx">
+      <DependentUpon>frmTaiXeEdit.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
