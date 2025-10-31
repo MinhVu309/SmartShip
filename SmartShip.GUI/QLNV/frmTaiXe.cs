@@ -4,11 +4,13 @@ using SmartShip.DAL.Model;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using SmartShip.GUI.QLNV;
+using BUS.Service;
 namespace SmartShip.GUI
 {
     public partial class frmTaiXe : Form
     {
-        TaiXeService bus = new TaiXeService(new TaiXeRepository());
+        TaiXeService bus = new TaiXeService();
         string action = "";
         public frmTaiXe()
         {
@@ -87,7 +89,7 @@ namespace SmartShip.GUI
             frmTaiXeEdit f = new frmTaiXeEdit("add");
             if (f.ShowDialog() == DialogResult.OK)
             {
-                bus.Add(f.TaiXe);
+                bus.Them(f.TaiXe);
                 LoadGrid();
             }
         }
@@ -110,7 +112,7 @@ namespace SmartShip.GUI
             frmTaiXeEdit f = new frmTaiXeEdit("edit", data);
             if (f.ShowDialog() == DialogResult.OK)
             {
-                bus.Update(f.TaiXe);
+                bus.CapNhat(f.TaiXe);
                 LoadGrid();
             }
         }
@@ -128,14 +130,28 @@ namespace SmartShip.GUI
                 return;
             }
 
+            // Lấy mã tài xế đang chọn
             string maTX = dgvTaiXe.CurrentRow.Cells["MaTaiXe"].Value.ToString();
 
-            // Gọi service đổi trạng thái
-            bus.ToggleStatus(maTX);
+            // Lấy tài xế từ database
+            var tx = bus.GetById(maTX);
+
+            if (tx == null)
+            {
+                MessageBox.Show("Không tìm thấy tài xế!", "Lỗi");
+                return;
+            }
+
+            // Cập nhật trạng thái SanSang (ví dụ: đảo ngược trạng thái)
+            tx.SanSang = !tx.SanSang;
+
+            // Gọi hàm cập nhật
+            bus.CapNhat(tx);
 
             MessageBox.Show("Cập nhật trạng thái thành công!", "Thông báo");
 
-            LoadGrid(); // Refresh lại DataGridView
+            // Tải lại danh sách
+            LoadGrid();
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
