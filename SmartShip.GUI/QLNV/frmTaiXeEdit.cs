@@ -1,12 +1,6 @@
 ﻿using SmartShip.DAL.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SmartShip.GUI.QLNV
@@ -15,10 +9,19 @@ namespace SmartShip.GUI.QLNV
     {
         public Taixe TaiXe { get; set; }
         private string mode;
-        public frmTaiXeEdit()
+
+        public frmTaiXeEdit(string mode)
         {
             InitializeComponent();
             this.mode = mode;
+            SetupUI();
+        }
+
+        public frmTaiXeEdit(string mode, Taixe data)
+        {
+            InitializeComponent();
+            this.mode = mode;
+            SetupUI();
 
             if (mode == "edit" && data != null)
             {
@@ -32,16 +35,18 @@ namespace SmartShip.GUI.QLNV
 
                 txtMaTX.ReadOnly = true;
             }
-            // ========== UI THEO BẢNG MÀU YÊU CẦU ==========
+        }
 
+        private void SetupUI()
+        {
             // Màu nền form
             this.BackColor = Color.FromArgb(40, 60, 60);
 
             // Panel chỉnh sửa
             pnlEdit.BackColor = Color.FromArgb(50, 70, 70);
             pnlEdit.BorderStyle = BorderStyle.FixedSingle;
-            //
-            // Label màu trắng
+
+            // Label
             foreach (Control c in pnlEdit.Controls)
             {
                 if (c is Label)
@@ -63,7 +68,7 @@ namespace SmartShip.GUI.QLNV
             // Checkbox style
             chkSanSang.ForeColor = Color.White;
 
-            // Button style vàng đồng
+            // Button style
             Button[] buttons = { btnLuu, btnHuy };
             foreach (Button btn in buttons)
             {
@@ -77,14 +82,21 @@ namespace SmartShip.GUI.QLNV
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            // Kiểm tra dữ liệu
+            if (string.IsNullOrWhiteSpace(txtMaTX.Text))
+            {
+                MessageBox.Show("Vui lòng nhập mã tài xế!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             TaiXe = new Taixe()
             {
                 MaTaiXe = txtMaTX.Text,
                 MaNguoiDung = txtNguoiDung.Text,
                 LoaiXe = txtLoaiXe.Text,
                 BienSo = txtBienSo.Text,
-                Diem = decimal.Parse(txtDiem.Text),
-                TongDon = int.Parse(txtTongDon.Text),
+                Diem = decimal.TryParse(txtDiem.Text, out decimal diem) ? diem : 0,
+                TongDon = int.TryParse(txtTongDon.Text, out int tongDon) ? tongDon : 0,
                 SanSang = chkSanSang.Checked
             };
 

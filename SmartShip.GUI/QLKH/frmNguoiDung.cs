@@ -10,13 +10,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BUS.Service;
+using SmartShip.GUI.QLKH;
 
 namespace SmartShip.GUI
 {
     public partial class frmNguoiDung : Form
     {
-        NguoiDungService bus = new NguoiDungService(new NguoiDungRepository());
+        NguoiDungService bus = new NguoiDungService();
         string action = ""; // "add" hoặc "edit"
         public frmNguoiDung()
         {
@@ -91,7 +92,7 @@ namespace SmartShip.GUI
             frmNguoiDungEdit frm = new frmNguoiDungEdit("add");
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                bus.Add(frm.nguoiDung);
+                bus.Them(frm.nguoiDung);
                 LoadGrid();
             }
         }
@@ -112,7 +113,7 @@ namespace SmartShip.GUI
             frmNguoiDungEdit frm = new frmNguoiDungEdit("edit", nd);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                bus.Update(frm.nguoiDung);
+                bus.CapNhat(frm.nguoiDung);
                 LoadGrid();
             }
         }
