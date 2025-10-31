@@ -255,6 +255,85 @@
             this.cmbDC.Name = "cmbDC";
             this.cmbDC.Size = new System.Drawing.Size(211, 24);
             this.cmbDC.TabIndex = 1;
+            // Mau
+            // ==================== PHỐI MÀU GIAO DIỆN ====================
+
+            // Màu định nghĩa
+            System.Drawing.Color xanhReu = System.Drawing.Color.FromArgb(40, 60, 60);
+            System.Drawing.Color vangDong = System.Drawing.Color.FromArgb(180, 150, 90);
+
+            // Form nền
+            this.BackColor = xanhReu;
+
+            // Label tiêu đề
+            this.label1.ForeColor = vangDong;
+
+            // GroupBox
+            this.grbTTDH.BackColor = xanhReu;
+            this.grbTTDH.ForeColor = System.Drawing.Color.White;
+
+            // Label trong GroupBox
+            this.label2.ForeColor = vangDong;
+            this.label3.ForeColor = vangDong;
+            this.label4.ForeColor = vangDong;
+            this.label5.ForeColor = vangDong;
+            this.label6.ForeColor = vangDong;
+            this.label7.ForeColor = vangDong;
+            this.label8.ForeColor = vangDong;
+
+            // ComboBox
+            this.cmbNV.BackColor = System.Drawing.Color.FromArgb(60, 80, 80);
+            this.cmbNV.ForeColor = System.Drawing.Color.White;
+
+            this.cmbKH.BackColor = System.Drawing.Color.FromArgb(60, 80, 80);
+            this.cmbKH.ForeColor = System.Drawing.Color.White;
+
+            this.cmbDC.BackColor = System.Drawing.Color.FromArgb(60, 80, 80);
+            this.cmbDC.ForeColor = System.Drawing.Color.White;
+
+            // TextBox
+            this.txtTenSP.BackColor = System.Drawing.Color.FromArgb(60, 80, 80);
+            this.txtTenSP.ForeColor = System.Drawing.Color.White;
+
+            this.txtGhiChu.BackColor = System.Drawing.Color.FromArgb(60, 80, 80);
+            this.txtGhiChu.ForeColor = System.Drawing.Color.White;
+
+            this.txtTongT.BackColor = System.Drawing.Color.FromArgb(60, 80, 80);
+            this.txtTongT.ForeColor = System.Drawing.Color.White;
+
+            // NumericUpDown
+            this.nudSL.BackColor = System.Drawing.Color.FromArgb(60, 80, 80);
+            this.nudSL.ForeColor = System.Drawing.Color.White;
+
+            // DataGridView phối màu
+            this.dgvDS.BackgroundColor = System.Drawing.Color.FromArgb(50, 70, 70);
+            this.dgvDS.GridColor = vangDong;
+            this.dgvDS.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(60, 80, 80);
+            this.dgvDS.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvDS.DefaultCellStyle.SelectionBackColor = vangDong;
+            this.dgvDS.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(40, 60, 60);
+
+            // Nút bấm (Button)
+            System.Drawing.Color btnBack = vangDong;
+            System.Drawing.Color btnText = System.Drawing.Color.FromArgb(40, 60, 60);
+
+            this.btnLuu.BackColor = btnBack;
+            this.btnLuu.ForeColor = btnText;
+            this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLuu.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(120, 100, 60);
+
+            this.btnHuy.BackColor = btnBack;
+            this.btnHuy.ForeColor = btnText;
+            this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHuy.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(120, 100, 60);
+
+            this.btnThoat.BackColor = btnBack;
+            this.btnThoat.ForeColor = btnText;
+            this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThoat.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(120, 100, 60);
+
+            // ==================== HẾT PHỐI MÀU ====================
+
             // 
             // TaoDH
             // 

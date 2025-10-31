@@ -265,6 +265,79 @@
             this.txtTongD.Name = "txtTongD";
             this.txtTongD.Size = new System.Drawing.Size(138, 27);
             this.txtTongD.TabIndex = 1;
+            // mau
+            // ==================== PHỐI MÀU GIAO DIỆN ====================
+
+            // Màu định nghĩa
+            System.Drawing.Color xanhReu = System.Drawing.Color.FromArgb(40, 60, 60);
+            System.Drawing.Color vangDong = System.Drawing.Color.FromArgb(180, 150, 90);
+            System.Drawing.Color nenPhu = System.Drawing.Color.FromArgb(60, 80, 80);
+
+            // Form nền
+            this.BackColor = xanhReu;
+            this.ForeColor = System.Drawing.Color.White;
+
+            // MenuStrip
+            this.menuStrip1.BackColor = nenPhu;
+            this.menuStrip1.ForeColor = System.Drawing.Color.White;
+            this.chứcNăngToolStripMenuItem.ForeColor = vangDong;
+            this.XuatToolStripMenuItem.BackColor = nenPhu;
+            this.topToolStripMenuItem.BackColor = nenPhu;
+            this.thoátToolStripMenuItem.BackColor = nenPhu;
+            this.XuatToolStripMenuItem.ForeColor = vangDong;
+            this.topToolStripMenuItem.ForeColor = vangDong;
+            this.thoátToolStripMenuItem.ForeColor = vangDong;
+
+            // GroupBox "Thông kê đơn hàng"
+            this.grbTK.BackColor = nenPhu;
+            this.grbTK.ForeColor = System.Drawing.Color.White;
+            this.label1.ForeColor = vangDong;
+            this.label2.ForeColor = vangDong;
+
+            // DateTimePicker
+            this.dtpTuNgay.CalendarMonthBackground = System.Drawing.Color.FromArgb(70, 90, 90);
+            this.dtpTuNgay.CalendarForeColor = System.Drawing.Color.White;
+            this.dtpDenNgay.CalendarMonthBackground = System.Drawing.Color.FromArgb(70, 90, 90);
+            this.dtpDenNgay.CalendarForeColor = System.Drawing.Color.White;
+
+            // Button Thống kê
+            this.btnTKe.BackColor = vangDong;
+            this.btnTKe.ForeColor = xanhReu;
+            this.btnTKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTKe.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(120, 100, 60);
+
+            // GroupBox "Trạng thái"
+            this.groupBox1.BackColor = nenPhu;
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+
+            // Chart trạng thái
+            this.chartTrangThai.BackColor = System.Drawing.Color.FromArgb(50, 70, 70);
+            this.chartTrangThai.ChartAreas[0].BackColor = System.Drawing.Color.FromArgb(50, 70, 70);
+            this.chartTrangThai.Legends[0].BackColor = System.Drawing.Color.FromArgb(50, 70, 70);
+            this.chartTrangThai.Legends[0].ForeColor = vangDong;
+            this.chartTrangThai.Series[0].Color = vangDong;
+
+            // GroupBox "Doanh thu"
+            this.groupBox2.BackColor = nenPhu;
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
+
+            // Chart doanh thu
+            this.chartDoanhThu.BackColor = System.Drawing.Color.FromArgb(50, 70, 70);
+            this.chartDoanhThu.ChartAreas[0].BackColor = System.Drawing.Color.FromArgb(50, 70, 70);
+            this.chartDoanhThu.Legends[0].BackColor = System.Drawing.Color.FromArgb(50, 70, 70);
+            this.chartDoanhThu.Legends[0].ForeColor = vangDong;
+            this.chartDoanhThu.Series[0].Color = vangDong;
+
+            // Label và TextBox tổng đơn hàng, thu nhập
+            this.label3.ForeColor = vangDong;
+            this.label4.ForeColor = vangDong;
+            this.txtTongD.BackColor = nenPhu;
+            this.txtTongD.ForeColor = System.Drawing.Color.White;
+            this.txtTongTN.BackColor = nenPhu;
+            this.txtTongTN.ForeColor = System.Drawing.Color.White;
+
+            // ==================== HẾT PHỐI MÀU ====================
+
             // 
             // Thongke
             // 

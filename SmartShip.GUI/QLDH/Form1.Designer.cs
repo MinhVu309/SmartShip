@@ -1,6 +1,6 @@
 ﻿namespace DA.GUI
 {
-    partial class Form1
+    partial class frmQLDH
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQLDH));
             this.dgvDonHang = new System.Windows.Forms.DataGridView();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnTim = new System.Windows.Forms.Button();
@@ -54,8 +54,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDocHoaDon = new System.Drawing.Printing.PrintDocument();
+            this.previewDlgHoaDon = new System.Windows.Forms.PrintPreviewDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDonHang)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -296,18 +296,85 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã ĐH";
             // 
-            // printPreviewDialog1
+            // printDocHoaDon
             // 
-            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreviewDialog1.Document = this.printDocument1;
-            this.printPreviewDialog1.Enabled = true;
-            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
-            this.printPreviewDialog1.Name = "printPreviewDialog1";
-            this.printPreviewDialog1.Visible = false;
+            this.printDocHoaDon.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocHoaDon_PrintPage);
             // 
-            // Form1
+            // previewDlgHoaDon
+            // 
+            this.previewDlgHoaDon.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.previewDlgHoaDon.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.previewDlgHoaDon.ClientSize = new System.Drawing.Size(400, 300);
+            this.previewDlgHoaDon.Document = this.printDocHoaDon;
+            this.previewDlgHoaDon.Enabled = true;
+            this.previewDlgHoaDon.Icon = ((System.Drawing.Icon)(resources.GetObject("previewDlgHoaDon.Icon")));
+            this.previewDlgHoaDon.Name = "printPreviewDialog1";
+            this.previewDlgHoaDon.Visible = false;
+            // Mau
+            // ==================== PHỐI MÀU GIAO DIỆN ====================
+
+            // Màu chủ đạo
+            System.Drawing.Color xanhReu = System.Drawing.Color.FromArgb(40, 60, 60);
+            System.Drawing.Color vangDong = System.Drawing.Color.FromArgb(180, 150, 90);
+
+            // Form nền
+            this.BackColor = xanhReu;
+
+            // Label tiêu đề
+            this.label1.ForeColor = vangDong;
+
+            // MenuStrip
+            this.menuStrip1.BackColor = xanhReu;
+            this.menuStrip1.ForeColor = vangDong;
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+
+            // GroupBox
+            this.groupBox1.BackColor = xanhReu;
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+
+            // Label trong GroupBox (màu vàng đồng)
+            this.label2.ForeColor = vangDong;
+            this.label3.ForeColor = vangDong;
+            this.label4.ForeColor = vangDong;
+            this.label6.ForeColor = vangDong;
+            this.label7.ForeColor = vangDong;
+
+            // Nút bấm (Button)
+            System.Drawing.Color btnBack = vangDong;
+            System.Drawing.Color btnText = System.Drawing.Color.FromArgb(40, 60, 60);
+
+            this.btnTim.BackColor = btnBack;
+            this.btnTim.ForeColor = btnText;
+            this.btnTim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTim.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(120, 100, 60);
+
+            this.btnXoa.BackColor = btnBack;
+            this.btnXoa.ForeColor = btnText;
+            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoa.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(120, 100, 60);
+
+            this.btnCapNhat.BackColor = btnBack;
+            this.btnCapNhat.ForeColor = btnText;
+            this.btnCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCapNhat.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(120, 100, 60);
+
+            this.btnThoat.BackColor = btnBack;
+            this.btnThoat.ForeColor = btnText;
+            this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThoat.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(120, 100, 60);
+
+            // DataGridView phối màu
+            this.dgvDonHang.BackgroundColor = System.Drawing.Color.FromArgb(50, 70, 70);
+            this.dgvDonHang.GridColor = vangDong;
+            this.dgvDonHang.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(60, 80, 80);
+            this.dgvDonHang.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvDonHang.DefaultCellStyle.SelectionBackColor = vangDong;
+            this.dgvDonHang.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(40, 60, 60);
+
+            // ==================== HẾT PHỐI MÀU ====================
+
+            // 
+            // frmQLDH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -317,7 +384,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "frmQLDH";
             this.Text = "Quản Lý Đơn Hàng";
             this.Load += new System.EventHandler(this.Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDonHang)).EndInit();
@@ -351,8 +418,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ToolStripMenuItem inHóaĐơnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xuấtExcelToolStripMenuItem;
-        private System.Drawing.Printing.PrintDocument printDocument1;
-        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Drawing.Printing.PrintDocument printDocHoaDon;
+        private System.Windows.Forms.PrintPreviewDialog previewDlgHoaDon;
         private System.Windows.Forms.ToolStripMenuItem thôngKêToolStripMenuItem;
         private System.Windows.Forms.TextBox txtNguoiD;
         private System.Windows.Forms.Label label6;

@@ -64,6 +64,7 @@
     <Compile Include="Model\Taikhoan.cs" />
     <Compile Include="Model\Taixe.cs" />
     <Compile Include="Model\ThanhToan.cs" />
+    <Compile Include="Model\TopKhachHang.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -87,7 +87,57 @@
             this.Thoát.Text = "Thoát";
             this.Thoát.UseVisualStyleBackColor = true;
             this.Thoát.Click += new System.EventHandler(this.Thoát_Click);
-            // 
+            // mau
+            // ==================== PHỐI MÀU GIAO DIỆN ====================
+
+            // Định nghĩa màu
+            System.Drawing.Color xanhReu = System.Drawing.Color.FromArgb(40, 60, 60);
+            System.Drawing.Color vangDong = System.Drawing.Color.FromArgb(180, 150, 90);
+            System.Drawing.Color nenPhu = System.Drawing.Color.FromArgb(60, 80, 80);
+
+            // Màu nền form
+            this.BackColor = xanhReu;
+
+            // Label tiêu đề
+            this.label1.ForeColor = vangDong;
+
+            // DataGridView Top Nhân Viên
+            this.dgvTNV.BackgroundColor = nenPhu;
+            this.dgvTNV.GridColor = vangDong;
+            this.dgvTNV.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(50, 70, 70);
+            this.dgvTNV.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvTNV.DefaultCellStyle.SelectionBackColor = vangDong;
+            this.dgvTNV.DefaultCellStyle.SelectionForeColor = xanhReu;
+            this.dgvTNV.ColumnHeadersDefaultCellStyle.BackColor = vangDong;
+            this.dgvTNV.ColumnHeadersDefaultCellStyle.ForeColor = xanhReu;
+            this.dgvTNV.EnableHeadersVisualStyles = false;
+
+            // DataGridView Top Khách Hàng
+            this.dgvTKH.BackgroundColor = nenPhu;
+            this.dgvTKH.GridColor = vangDong;
+            this.dgvTKH.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(50, 70, 70);
+            this.dgvTKH.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvTKH.DefaultCellStyle.SelectionBackColor = vangDong;
+            this.dgvTKH.DefaultCellStyle.SelectionForeColor = xanhReu;
+            this.dgvTKH.ColumnHeadersDefaultCellStyle.BackColor = vangDong;
+            this.dgvTKH.ColumnHeadersDefaultCellStyle.ForeColor = xanhReu;
+            this.dgvTKH.EnableHeadersVisualStyles = false;
+
+            // Nút "Xuất Excel"
+            this.btnXuat.BackColor = vangDong;
+            this.btnXuat.ForeColor = xanhReu;
+            this.btnXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXuat.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(120, 100, 60);
+
+            // Nút "Thoát"
+            this.Thoát.BackColor = vangDong;
+            this.Thoát.ForeColor = xanhReu;
+            this.Thoát.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Thoát.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(120, 100, 60);
+
+            // ==================== HẾT PHỐI MÀU ====================
+
+            //
             // Top
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
