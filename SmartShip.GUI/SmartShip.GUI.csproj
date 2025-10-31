@@ -62,17 +62,17 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Login\FrmForgotPassword.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login\FrmForgotPassword.Designer.cs">
       <DependentUpon>FrmForgotPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Login\FrmRegister.cs">
       <SubType>Form</SubType>
@@ -136,11 +136,11 @@
     <Compile Include="QLNV\frmTaiXeEdit.Designer.cs">
       <DependentUpon>frmTaiXeEdit.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Login\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Login\FrmForgotPassword.resx">
       <DependentUpon>FrmForgotPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\FrmRegister.resx">
       <DependentUpon>FrmRegister.cs</DependentUpon>
@@ -197,6 +197,10 @@
     <Folder Include="Admin\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SmartShip.BUS\SmartShip.BUS.csproj">
+      <Project>{1d1a8a41-5768-4a49-8e34-5ed6bbb388af}</Project>
+      <Name>SmartShip.BUS</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SmartShip.DAL\SmartShip.DAL.csproj">
       <Project>{579a137b-e16e-43eb-9152-a308ce716bdb}</Project>
       <Name>SmartShip.DAL</Name>

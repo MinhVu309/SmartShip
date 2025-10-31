@@ -43,6 +43,10 @@ namespace SmartShip.DAL.Model
         [StringLength(100)]
         public string ResetCode { get; set; }
 
+        public string VaiTro { get; set; }
+        public string Email { get; set; }
+
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DiaChi> DiaChis { get; set; }
 

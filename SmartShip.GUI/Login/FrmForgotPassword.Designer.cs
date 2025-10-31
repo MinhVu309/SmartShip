@@ -1,4 +1,4 @@
-﻿namespace DangNhap3Lop
+﻿namespace SmartShip.GUI.Login
 {
     partial class FrmForgotPassword
     {
@@ -40,24 +40,29 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(150)))), ((int)(((byte)(90)))));
             this.label1.Location = new System.Drawing.Point(306, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 20);
+            this.label1.Size = new System.Drawing.Size(176, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "SMARTSHIP";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label2.Location = new System.Drawing.Point(203, 88);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 20);
+            this.label2.Size = new System.Drawing.Size(64, 30);
             this.label2.TabIndex = 0;
             this.label2.Text = "Email";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(203, 135);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 20);
@@ -65,14 +70,19 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtEmail.ForeColor = System.Drawing.Color.White;
             this.txtEmail.Location = new System.Drawing.Point(276, 88);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(253, 26);
+            this.txtEmail.Size = new System.Drawing.Size(253, 34);
             this.txtEmail.TabIndex = 1;
             // 
             // lblMessage
             // 
             this.lblMessage.AutoSize = true;
+            this.lblMessage.ForeColor = System.Drawing.Color.LightCoral;
             this.lblMessage.Location = new System.Drawing.Point(629, 285);
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(0, 20);
@@ -80,28 +90,37 @@
             // 
             // btnSendCode
             // 
+            this.btnSendCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(150)))), ((int)(((byte)(90)))));
+            this.btnSendCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSendCode.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnSendCode.ForeColor = System.Drawing.Color.White;
             this.btnSendCode.Location = new System.Drawing.Point(344, 134);
             this.btnSendCode.Name = "btnSendCode";
-            this.btnSendCode.Size = new System.Drawing.Size(75, 30);
+            this.btnSendCode.Size = new System.Drawing.Size(75, 39);
             this.btnSendCode.TabIndex = 2;
             this.btnSendCode.Text = "Gửi";
-            this.btnSendCode.UseVisualStyleBackColor = true;
+            this.btnSendCode.UseVisualStyleBackColor = false;
             this.btnSendCode.Click += new System.EventHandler(this.btnSendCode_Click);
             // 
             // btnNext
             // 
+            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(150)))), ((int)(((byte)(90)))));
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnNext.ForeColor = System.Drawing.Color.White;
             this.btnNext.Location = new System.Drawing.Point(454, 184);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(104, 30);
+            this.btnNext.Size = new System.Drawing.Size(104, 40);
             this.btnNext.TabIndex = 2;
             this.btnNext.Text = "Tiếp Tục";
-            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // FrmForgotPassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnSendCode);

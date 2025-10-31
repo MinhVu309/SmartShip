@@ -56,7 +56,7 @@ namespace SmartShip.GUI
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 
         }
-        }
+        
 
         private void frmNguoiDung_Load(object sender, EventArgs e)
         {

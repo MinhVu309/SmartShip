@@ -1,4 +1,6 @@
-﻿using DangNhap.BUS;
+﻿using SmartShip.GUI.Login;
+using SmartShip.DAL.Model;
+using SmartShip.BUS.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DangNhap3Lop
+namespace SmartShip.GUI.Login
 {
     public partial class FrmForgotPassword : Form
     {
