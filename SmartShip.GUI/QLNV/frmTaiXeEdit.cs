@@ -40,7 +40,7 @@ namespace SmartShip.GUI.QLNV
             // Panel chỉnh sửa
             pnlEdit.BackColor = Color.FromArgb(50, 70, 70);
             pnlEdit.BorderStyle = BorderStyle.FixedSingle;
-
+            //
             // Label màu trắng
             foreach (Control c in pnlEdit.Controls)
             {

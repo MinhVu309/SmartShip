@@ -14,7 +14,7 @@ namespace SmartShip.GUI
         {
             InitializeComponent();
         }
-
+        //
         private void frmTaiXe_Load(object sender, EventArgs e)
         {
             LoadGrid();

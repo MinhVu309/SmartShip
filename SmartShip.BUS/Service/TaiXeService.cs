@@ -15,7 +15,7 @@ namespace BUS.Service
         {
             return db.Taixes.ToList();
         }
-
+        //
         public Taixe GetById(string id)
         {
             return db.Taixes.Find(id);

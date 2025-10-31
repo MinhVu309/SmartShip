@@ -15,7 +15,7 @@ namespace BUS.Service
         {
             return db.NguoiDungs.ToList();
         }
-
+        //
         public NguoiDung GetById(string id)
         {
             return db.NguoiDungs.Find(id);
