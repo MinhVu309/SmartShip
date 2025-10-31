@@ -31,7 +31,7 @@ namespace SmartShip.GUI.QLKH
             }
             // ✅ Màu toàn form
             this.BackColor = System.Drawing.Color.FromArgb(40, 60, 60);
-
+            //
             // ✅ Panel nền cùng theme
             this.pnlEdit.BackColor = System.Drawing.Color.FromArgb(40, 60, 60);
 
