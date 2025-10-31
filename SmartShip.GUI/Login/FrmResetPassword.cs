@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DangNhap.BUS;       
-using DangNhap.DAL.Models;
+using SmartShip.GUI.Login;
+using SmartShip.DAL.Model;
+using SmartShip.BUS.Service;
 
-namespace DangNhap3Lop
+namespace SmartShip.GUI.Login
 {
     public partial class FrmResetPassword : Form
     {

@@ -1,5 +1,5 @@
-﻿using DangNhap.BUS;
-using DangNhap.DAL.Models;
+﻿using SmartShip.DAL.Model;
+using SmartShip.BUS.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,8 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SmartShip.GUI.Login;
 
-namespace DangNhap3Lop
+namespace SmartShip.GUI.Login
 {
     public partial class FrmRegister : Form
     {
@@ -74,48 +75,20 @@ namespace DangNhap3Lop
             MessageBox.Show("Đăng ký thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             // 👉 Quay lại form đăng nhập
-            new Form1().Show();
+            new frmLogin().Show();
             this.Close();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            new Form1().Show();
+            new frmLogin().Show();
             this.Close();
         }
 
         private void FrmRegister_Load(object sender, EventArgs e)
         {
-            this.BackColor = Color.FromArgb(40, 60, 60);
-            this.Font = new Font("Segoe UI", 10F, FontStyle.Regular);
-
-            foreach (Control ctrl in this.Controls)
-            {
-                if (ctrl is Label lbl)
-                {
-                    lbl.ForeColor = Color.WhiteSmoke;
-                    lbl.Font = new Font("Bahnschrift", 11F, FontStyle.Bold);
-                }
-                else if (ctrl is TextBox || ctrl is ComboBox)
-                {
-                    ctrl.BackColor = Color.FromArgb(55, 75, 75);
-                    ctrl.ForeColor = Color.WhiteSmoke;
-                    ctrl.Font = new Font("Segoe UI", 10F, FontStyle.Regular);
-                }
-                else if (ctrl is Button btn)
-                {
-                    btn.BackColor = Color.FromArgb(180, 150, 90);
-                    btn.ForeColor = Color.Black;
-                    btn.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
-                    btn.FlatStyle = FlatStyle.Flat;
-                    btn.FlatAppearance.BorderSize = 0;
-                    btn.Cursor = Cursors.Hand;
-
-                    btn.MouseEnter += (s, ev) => btn.BackColor = Color.FromArgb(200, 170, 110);
-                    btn.MouseLeave += (s, ev) => btn.BackColor = Color.FromArgb(180, 150, 90);
-                }
-            }
-
+            
+         
         }
 
     }
