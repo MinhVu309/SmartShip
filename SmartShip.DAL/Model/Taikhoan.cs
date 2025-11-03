@@ -43,6 +43,9 @@ namespace SmartShip.DAL.Model
         public string SDT { get; set; }
         public string HoTen { get; set; }
 
+        public string DiaChi { get; set; }
+
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NguoiDung> NguoiDungs { get; set; }
     }

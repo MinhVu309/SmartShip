@@ -9,6 +9,7 @@ using System.Linq;
 using System.Data.Entity;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Office.Interop;
 
 namespace DA.GUI
 {
@@ -27,14 +28,12 @@ namespace DA.GUI
         {
             InitializeComponent();
         }
+        
         private void Form_Load(object sender, EventArgs e)
         {
-            
-            // Load danh sách đơn hàng với thông tin đầy đủ
             LoadData();
             LoadTaiXe(); 
             LoadTrangThai();
-
         }
         private void LoadData()
         {
@@ -86,7 +85,7 @@ namespace DA.GUI
             dgvDonHang.Columns["TrangThai"].HeaderText = "Trạng Thái";
             dgvDonHang.Columns["NgayTao"].HeaderText = "Ngày Tạo";
 
-            // Thiết lập độ rộng cột (tùy chọn)
+            // Thiết lập độ rộng cột
             dgvDonHang.Columns["MaDon"].Width = 80;
             dgvDonHang.Columns["NguoiDat"].Width = 120;
             dgvDonHang.Columns["NguoiGiao"].Width = 120;
@@ -98,7 +97,7 @@ namespace DA.GUI
         }
         private void LoadTrangThai()
         {
-            // Danh sách trạng thái cố định theo hệ thống của bạn
+            // Danh sách trạng thái cố định theo hệ thống
             var trangThais = new List<string>
             {
                 "Chờ",
@@ -154,7 +153,6 @@ namespace DA.GUI
 
             try
             {
-                var donHangSv = new DonHangService();
                 var donHang = donHangSv.GetById(maDon);
 
                 if (donHang == null)
@@ -163,7 +161,7 @@ namespace DA.GUI
                     return;
                 }
 
-                //  không cho xóa nếu đã thanh toán hoặc đã giao
+                //  không cho xóa nếu ko phải trang thái "Chờ"
                 if (donHang.TrangThai != "Chờ")
                 {
                     MessageBox.Show("Chỉ được xóa đơn hàng có trạng thái 'Chờ'!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -200,7 +198,7 @@ namespace DA.GUI
             }
             // Cập nhật trạng thái
             donHang.TrangThai = cmbTrangThai.Text;
-            // Cập nhật tài xế (nếu có chọn)
+            // Cập nhật tài xế nếu chọn
             if (cmbNguoiG.SelectedValue != null)
             {
                 donHang.MaTaiXe = cmbNguoiG.SelectedValue.ToString();
@@ -217,64 +215,48 @@ namespace DA.GUI
         }
         private void btnTim_Click(object sender, EventArgs e)
         {
+            string keyword = txtTim.Text.Trim();
+            var ketQua = donHangSv.TimDonHang(keyword);
 
-            string maTim = txtTim.Text.Trim();
-            if (string.IsNullOrEmpty(maTim))
+            if (ketQua == null || ketQua.Count == 0)
             {
-                // Load toàn bộ đơn hàng nếu ô tìm kiếm trống
-                Form_Load(null, null);
-                return;
-            }
-
-            // Tìm đơn hàng theo mã
-            var donHang = donHangSv.GetById(maTim);
-
-            if (donHang == null)
-            {
-                // Không tìm thấy hiển thị trống
                 dgvDonHang.DataSource = new List<object>();
                 MessageBox.Show("Không tìm thấy đơn hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            // Nếu tìm thấy → gọi lại Form_Load nhưng chỉ với đơn này
-            // Tạm thời ghi đè DataSource (giống logic Form_Load)
-
-            var nguoiDat = NguoiDungSv.GetById(donHang.MaKhach)?.HoTen ?? "Không xác định";
-            string nguoiGiao = "Chưa phân công";
-            if (!string.IsNullOrEmpty(donHang.MaTaiXe))
+            // Dựng lại dữ liệu hiển thị
+            dgvDonHang.DataSource = ketQua.Select(dh =>
             {
-                var tx = TaixeSv.GetById(donHang.MaTaiXe);
-                if (tx != null)
+                var nguoiDat = NguoiDungSv.GetById(dh.MaKhach)?.HoTen ?? "Không xác định";
+                string nguoiGiao = "Chưa phân công";
+
+                if (!string.IsNullOrEmpty(dh.MaTaiXe))
                 {
-                    nguoiGiao = NguoiDungSv.GetById(tx.MaNguoiDung)?.HoTen ?? "Không xác định";
+                    var tx = TaixeSv.GetById(dh.MaTaiXe);
+                    if (tx != null)
+                        nguoiGiao = NguoiDungSv.GetById(tx.MaNguoiDung)?.HoTen ?? "Không xác định";
                 }
-            }
-            var diaChi = diaChiSv.GetById(donHang.MaDiaChiGiao)?.DiaChiChiTiet ?? "Không có địa chỉ";
 
-            dgvDonHang.DataSource = new[]
-            {
-                new
+                var diaChi = diaChiSv.GetById(dh.MaDiaChiGiao)?.DiaChiChiTiet ?? "Không có địa chỉ";
+
+                return new
                 {
-                    MaDon = donHang.MaDon,
+                    MaDon = dh.MaDon,
                     NguoiDat = nguoiDat,
                     NguoiGiao = nguoiGiao,
                     DiaChiGiao = diaChi,
-                    TrangThai = donHang.TrangThai,
-                    NgayTao = donHang.NgayTao
-                }
-            }.ToList();
-
-            // Thiết lập cột (nếu chưa có)
-            if (dgvDonHang.Columns.Count > 0)
-            {
-                dgvDonHang.Columns["MaDon"].HeaderText = "Mã Đơn";
-                dgvDonHang.Columns["NguoiDat"].HeaderText = "Người Đặt";
-                dgvDonHang.Columns["NguoiGiao"].HeaderText = "Người Giao";
-                dgvDonHang.Columns["DiaChiGiao"].HeaderText = "Địa Chỉ Giao";
-                dgvDonHang.Columns["TrangThai"].HeaderText = "Trạng Thái";
-                dgvDonHang.Columns["NgayTao"].HeaderText = "Ngày Tạo";
-            }
+                    TrangThai = dh.TrangThai,
+                    NgayTao = dh.NgayTao
+                };
+            }).ToList();
+            // Cập nhật tiêu đề cột
+            dgvDonHang.Columns["MaDon"].HeaderText = "Mã Đơn";
+            dgvDonHang.Columns["NguoiDat"].HeaderText = "Người Đặt";
+            dgvDonHang.Columns["NguoiGiao"].HeaderText = "Người Giao";
+            dgvDonHang.Columns["DiaChiGiao"].HeaderText = "Địa Chỉ Giao";
+            dgvDonHang.Columns["TrangThai"].HeaderText = "Trạng Thái";
+            dgvDonHang.Columns["NgayTao"].HeaderText = "Ngày Tạo";
         }
        
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
@@ -284,11 +266,6 @@ namespace DA.GUI
         private void btnThoat_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-        private void tạoĐơnHàngToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            TaoDH taoDH = new TaoDH();
-            taoDH.ShowDialog();
         }
         private void inHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -391,11 +368,7 @@ namespace DA.GUI
                 }
             }
         }
-        private void thôngKêToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Thongke tk = new Thongke();
-            tk.ShowDialog();
-        }
+       
         private void dgvDSDH_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
@@ -405,7 +378,7 @@ namespace DA.GUI
             // Lấy dữ liệu từ các cột 
             string maDon = row.Cells["MaDon"].Value?.ToString();
             string nguoiDat = row.Cells["NguoiDat"].Value?.ToString();
-            string nguoiGiaoText = row.Cells["NguoiGiao"].Value?.ToString(); // chỉ để hiển thị fallback
+            string nguoiGiaoText = row.Cells["NguoiGiao"].Value?.ToString(); 
             string diaChiGiao = row.Cells["DiaChiGiao"].Value?.ToString();
             string trangThai = row.Cells["TrangThai"].Value?.ToString();
             var ngayTaoObj = row.Cells["NgayTao"].Value;
@@ -427,14 +400,6 @@ namespace DA.GUI
 
             if (string.IsNullOrEmpty(maTaiXe))
             {
-                // Chưa phân công
-                cmbNguoiG.Text = "Chưa phân công";
-                // Đảm bảo không có item nào được chọn
-                cmbNguoiG.SelectedIndex = -1;
-            }
-            else
-            {
-                // Cố gắng chọn tài xế trong ComboBox
                 cmbNguoiG.SelectedValue = maTaiXe;
 
                 // Nếu không tìm thấy , hiển thị cảnh báo
@@ -444,9 +409,6 @@ namespace DA.GUI
                     cmbNguoiG.SelectedIndex = -1;
                 }
             }
-
-
-
         }
 
         private void printDocHoaDon_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)

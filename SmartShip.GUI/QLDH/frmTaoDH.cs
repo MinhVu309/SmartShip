@@ -10,9 +10,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace DA.GUI
 {
-    public partial class TaoDH : Form
+    public partial class frmTaoDH : Form
     {
         private string maSanPhamChon = "";
         private decimal donGiaSanPham = 0;
@@ -21,7 +22,7 @@ namespace DA.GUI
         private readonly TaiXeService TaixeSv = new TaiXeService();
         private readonly ChiTietDonHangService chiTietDonHangSv = new ChiTietDonHangService();
         private readonly DiaChiService diaChiSv = new DiaChiService();
-        public TaoDH()
+        public frmTaoDH()
         {
             InitializeComponent();
         }
@@ -31,7 +32,7 @@ namespace DA.GUI
             LoadTaiXe();
             LoadKhachHang();
         }
-
+        
         private void LoadSanPham()
         {
             var sanPhams = sanPhamSv.GetAll();
@@ -51,9 +52,9 @@ namespace DA.GUI
 
             // Độ rộng cột (tùy ý)
             dgvDS.Columns["MaSanPham"].Width = 80;
-            dgvDS.Columns["TenSanPham"].Width = 200;
-            dgvDS.Columns["DonGia"].Width = 100;
-            dgvDS.Columns["TonKho"].Width = 80;
+            dgvDS.Columns["TenSanPham"].Width = 300;
+            dgvDS.Columns["DonGia"].Width = 150;
+            dgvDS.Columns["TonKho"].Width = 100;
         }
         private void LoadTaiXe()
         {
@@ -169,22 +170,14 @@ namespace DA.GUI
             txtGhiChu.Text = "";
             txtTenSP.Text = "";
             txtTongT.Text = "0";
-
-            // Reset NumericUpDown
             nudSL.Value = 0;
-
             // Reset ComboBox (nếu có)
             if (cmbNV.Items.Count > 0)
                 cmbNV.SelectedIndex = -1;
             else
                 cmbNV.Text = "";
         }
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            frmQLDH frm = new frmQLDH();
-            this.Hide();
-            frm.ShowDialog();
-        }
+       
         private void TinhTongTien()
         {
             int soLuong = (int)nudSL.Value; 

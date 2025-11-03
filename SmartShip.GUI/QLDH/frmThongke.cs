@@ -13,13 +13,14 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace DA.GUI
 {
-    public partial class Thongke : Form
+    public partial class frmThongke : Form
     {
         private readonly DonHangService donHangSv = new DonHangService();
         private readonly ChiTietDonHangService ctDhSv = new ChiTietDonHangService();
-        public Thongke()
+        public frmThongke()
         {
             InitializeComponent();
+
         }
         private void Thongke_Load(object sender, EventArgs e)
         {
@@ -42,7 +43,7 @@ namespace DA.GUI
             int tongDon = donHangs.Count;
             txtTongD.Text = tongDon.ToString();
 
-            // Tổng doanh thu = tổng (SoLuong * DonGia) từ ChiTietDonHang
+            // Tổng doanh thu = tổng (SoLuong * DonGia) 
             decimal tongDoanhThu = 0;
             var doanhThuTheoNgay = new Dictionary<DateTime, decimal>();
 
@@ -200,16 +201,9 @@ namespace DA.GUI
         }
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           frmQLDH frm = new frmQLDH();
-           frm.Hide();
-           frm.ShowDialog();
+            Application.Exit();
         }
-        private void topToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Top frmTop = new Top();
-            frmTop.Hide();
-            frmTop.ShowDialog();
-        }
+        
 
     }
 }

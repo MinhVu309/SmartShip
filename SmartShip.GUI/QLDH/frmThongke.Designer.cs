@@ -1,6 +1,6 @@
 ﻿namespace DA.GUI
 {
-    partial class Thongke
+    partial class frmThongke
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Thongke));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThongke));
             this.grbTK = new System.Windows.Forms.GroupBox();
             this.btnTKe = new System.Windows.Forms.Button();
             this.dtpDenNgay = new System.Windows.Forms.DateTimePicker();
@@ -44,7 +44,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.chứcNăngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.XuatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.topToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.chartTrangThai = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -66,11 +65,13 @@
             // 
             // grbTK
             // 
+            this.grbTK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.grbTK.Controls.Add(this.btnTKe);
             this.grbTK.Controls.Add(this.dtpDenNgay);
             this.grbTK.Controls.Add(this.dtpTuNgay);
             this.grbTK.Controls.Add(this.label2);
             this.grbTK.Controls.Add(this.label1);
+            this.grbTK.ForeColor = System.Drawing.Color.White;
             this.grbTK.Location = new System.Drawing.Point(13, 31);
             this.grbTK.Name = "grbTK";
             this.grbTK.Size = new System.Drawing.Size(775, 81);
@@ -80,25 +81,33 @@
             // 
             // btnTKe
             // 
+            this.btnTKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(150)))), ((int)(((byte)(90)))));
+            this.btnTKe.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(100)))), ((int)(((byte)(60)))));
+            this.btnTKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTKe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.btnTKe.Location = new System.Drawing.Point(580, 28);
             this.btnTKe.Name = "btnTKe";
             this.btnTKe.Size = new System.Drawing.Size(91, 26);
-            this.btnTKe.TabIndex = 2;
+            this.btnTKe.TabIndex = 3;
             this.btnTKe.Text = "Thông kê";
-            this.btnTKe.UseVisualStyleBackColor = true;
+            this.btnTKe.UseVisualStyleBackColor = false;
             this.btnTKe.Click += new System.EventHandler(this.btnTKe_Click);
             // 
             // dtpDenNgay
             // 
+            this.dtpDenNgay.CalendarForeColor = System.Drawing.Color.White;
+            this.dtpDenNgay.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
             this.dtpDenNgay.CustomFormat = "dd/MM/yyyy";
             this.dtpDenNgay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDenNgay.Location = new System.Drawing.Point(374, 29);
             this.dtpDenNgay.Name = "dtpDenNgay";
             this.dtpDenNgay.Size = new System.Drawing.Size(200, 22);
-            this.dtpDenNgay.TabIndex = 1;
+            this.dtpDenNgay.TabIndex = 2;
             // 
             // dtpTuNgay
             // 
+            this.dtpTuNgay.CalendarForeColor = System.Drawing.Color.White;
+            this.dtpTuNgay.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
             this.dtpTuNgay.CustomFormat = "dd/MM/yyyy";
             this.dtpTuNgay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpTuNgay.Location = new System.Drawing.Point(146, 29);
@@ -110,15 +119,17 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(150)))), ((int)(((byte)(90)))));
             this.label2.Location = new System.Drawing.Point(352, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(17, 18);
-            this.label2.TabIndex = 0;
+            this.label2.TabIndex = 4;
             this.label2.Text = "~";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(150)))), ((int)(((byte)(90)))));
             this.label1.Location = new System.Drawing.Point(6, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(133, 16);
@@ -127,6 +138,8 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.menuStrip1.ForeColor = System.Drawing.Color.White;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.chứcNăngToolStripMenuItem});
@@ -140,36 +153,35 @@
             // 
             this.chứcNăngToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.XuatToolStripMenuItem,
-            this.topToolStripMenuItem,
             this.thoátToolStripMenuItem});
+            this.chứcNăngToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(150)))), ((int)(((byte)(90)))));
             this.chứcNăngToolStripMenuItem.Name = "chứcNăngToolStripMenuItem";
             this.chứcNăngToolStripMenuItem.Size = new System.Drawing.Size(96, 24);
             this.chứcNăngToolStripMenuItem.Text = "Chức Năng";
             // 
             // XuatToolStripMenuItem
             // 
+            this.XuatToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.XuatToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(150)))), ((int)(((byte)(90)))));
             this.XuatToolStripMenuItem.Name = "XuatToolStripMenuItem";
-            this.XuatToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
+            this.XuatToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.XuatToolStripMenuItem.Text = "Xuất Excel";
             this.XuatToolStripMenuItem.Click += new System.EventHandler(this.XuatToolStripMenuItem_Click);
             // 
-            // topToolStripMenuItem
-            // 
-            this.topToolStripMenuItem.Name = "topToolStripMenuItem";
-            this.topToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
-            this.topToolStripMenuItem.Text = "Top";
-            this.topToolStripMenuItem.Click += new System.EventHandler(this.topToolStripMenuItem_Click);
-            // 
             // thoátToolStripMenuItem
             // 
+            this.thoátToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.thoátToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(150)))), ((int)(((byte)(90)))));
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.thoátToolStripMenuItem.Text = "Thoát";
             this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.groupBox1.Controls.Add(this.chartTrangThai);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(13, 119);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(369, 319);
@@ -179,23 +191,26 @@
             // 
             // chartTrangThai
             // 
-            chartArea7.Name = "ChartArea1";
-            this.chartTrangThai.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            this.chartTrangThai.Legends.Add(legend7);
+            this.chartTrangThai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            chartArea1.Name = "ChartArea1";
+            this.chartTrangThai.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartTrangThai.Legends.Add(legend1);
             this.chartTrangThai.Location = new System.Drawing.Point(9, 21);
             this.chartTrangThai.Name = "chartTrangThai";
-            series7.ChartArea = "ChartArea1";
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            this.chartTrangThai.Series.Add(series7);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartTrangThai.Series.Add(series1);
             this.chartTrangThai.Size = new System.Drawing.Size(354, 292);
             this.chartTrangThai.TabIndex = 0;
             this.chartTrangThai.Text = "Trạng Thái";
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.groupBox2.Controls.Add(this.chartDoanhThu);
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(397, 119);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(391, 319);
@@ -205,16 +220,17 @@
             // 
             // chartDoanhThu
             // 
-            chartArea8.Name = "ChartArea1";
-            this.chartDoanhThu.ChartAreas.Add(chartArea8);
-            legend8.Name = "Legend1";
-            this.chartDoanhThu.Legends.Add(legend8);
+            this.chartDoanhThu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            chartArea2.Name = "ChartArea1";
+            this.chartDoanhThu.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartDoanhThu.Legends.Add(legend2);
             this.chartDoanhThu.Location = new System.Drawing.Point(6, 21);
             this.chartDoanhThu.Name = "chartDoanhThu";
-            series8.ChartArea = "ChartArea1";
-            series8.Legend = "Legend1";
-            series8.Name = "Series1";
-            this.chartDoanhThu.Series.Add(series8);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartDoanhThu.Series.Add(series2);
             this.chartDoanhThu.Size = new System.Drawing.Size(379, 292);
             this.chartDoanhThu.TabIndex = 0;
             this.chartDoanhThu.Text = "Doanh Thu";
@@ -234,6 +250,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(150)))), ((int)(((byte)(90)))));
             this.label3.Location = new System.Drawing.Point(400, 450);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(110, 18);
@@ -242,6 +259,8 @@
             // 
             // txtTongTN
             // 
+            this.txtTongTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.txtTongTN.ForeColor = System.Drawing.Color.White;
             this.txtTongTN.Location = new System.Drawing.Point(516, 448);
             this.txtTongTN.Multiline = true;
             this.txtTongTN.Name = "txtTongTN";
@@ -252,6 +271,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(150)))), ((int)(((byte)(90)))));
             this.label4.Location = new System.Drawing.Point(19, 450);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 18);
@@ -260,89 +280,19 @@
             // 
             // txtTongD
             // 
+            this.txtTongD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.txtTongD.ForeColor = System.Drawing.Color.White;
             this.txtTongD.Location = new System.Drawing.Point(138, 450);
             this.txtTongD.Multiline = true;
             this.txtTongD.Name = "txtTongD";
             this.txtTongD.Size = new System.Drawing.Size(138, 27);
             this.txtTongD.TabIndex = 1;
-            // mau
-            // ==================== PHỐI MÀU GIAO DIỆN ====================
-
-            // Màu định nghĩa
-            System.Drawing.Color xanhReu = System.Drawing.Color.FromArgb(40, 60, 60);
-            System.Drawing.Color vangDong = System.Drawing.Color.FromArgb(180, 150, 90);
-            System.Drawing.Color nenPhu = System.Drawing.Color.FromArgb(60, 80, 80);
-
-            // Form nền
-            this.BackColor = xanhReu;
-            this.ForeColor = System.Drawing.Color.White;
-
-            // MenuStrip
-            this.menuStrip1.BackColor = nenPhu;
-            this.menuStrip1.ForeColor = System.Drawing.Color.White;
-            this.chứcNăngToolStripMenuItem.ForeColor = vangDong;
-            this.XuatToolStripMenuItem.BackColor = nenPhu;
-            this.topToolStripMenuItem.BackColor = nenPhu;
-            this.thoátToolStripMenuItem.BackColor = nenPhu;
-            this.XuatToolStripMenuItem.ForeColor = vangDong;
-            this.topToolStripMenuItem.ForeColor = vangDong;
-            this.thoátToolStripMenuItem.ForeColor = vangDong;
-
-            // GroupBox "Thông kê đơn hàng"
-            this.grbTK.BackColor = nenPhu;
-            this.grbTK.ForeColor = System.Drawing.Color.White;
-            this.label1.ForeColor = vangDong;
-            this.label2.ForeColor = vangDong;
-
-            // DateTimePicker
-            this.dtpTuNgay.CalendarMonthBackground = System.Drawing.Color.FromArgb(70, 90, 90);
-            this.dtpTuNgay.CalendarForeColor = System.Drawing.Color.White;
-            this.dtpDenNgay.CalendarMonthBackground = System.Drawing.Color.FromArgb(70, 90, 90);
-            this.dtpDenNgay.CalendarForeColor = System.Drawing.Color.White;
-
-            // Button Thống kê
-            this.btnTKe.BackColor = vangDong;
-            this.btnTKe.ForeColor = xanhReu;
-            this.btnTKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTKe.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(120, 100, 60);
-
-            // GroupBox "Trạng thái"
-            this.groupBox1.BackColor = nenPhu;
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-
-            // Chart trạng thái
-            this.chartTrangThai.BackColor = System.Drawing.Color.FromArgb(50, 70, 70);
-            this.chartTrangThai.ChartAreas[0].BackColor = System.Drawing.Color.FromArgb(50, 70, 70);
-            this.chartTrangThai.Legends[0].BackColor = System.Drawing.Color.FromArgb(50, 70, 70);
-            this.chartTrangThai.Legends[0].ForeColor = vangDong;
-            this.chartTrangThai.Series[0].Color = vangDong;
-
-            // GroupBox "Doanh thu"
-            this.groupBox2.BackColor = nenPhu;
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
-
-            // Chart doanh thu
-            this.chartDoanhThu.BackColor = System.Drawing.Color.FromArgb(50, 70, 70);
-            this.chartDoanhThu.ChartAreas[0].BackColor = System.Drawing.Color.FromArgb(50, 70, 70);
-            this.chartDoanhThu.Legends[0].BackColor = System.Drawing.Color.FromArgb(50, 70, 70);
-            this.chartDoanhThu.Legends[0].ForeColor = vangDong;
-            this.chartDoanhThu.Series[0].Color = vangDong;
-
-            // Label và TextBox tổng đơn hàng, thu nhập
-            this.label3.ForeColor = vangDong;
-            this.label4.ForeColor = vangDong;
-            this.txtTongD.BackColor = nenPhu;
-            this.txtTongD.ForeColor = System.Drawing.Color.White;
-            this.txtTongTN.BackColor = nenPhu;
-            this.txtTongTN.ForeColor = System.Drawing.Color.White;
-
-            // ==================== HẾT PHỐI MÀU ====================
-
             // 
-            // Thongke
+            // frmThongke
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.ClientSize = new System.Drawing.Size(809, 487);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.txtTongD);
@@ -352,8 +302,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.grbTK);
             this.Controls.Add(this.menuStrip1);
+            this.ForeColor = System.Drawing.Color.White;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Thongke";
+            this.Name = "frmThongke";
             this.Text = "Thông kê đơn hàng";
             this.Load += new System.EventHandler(this.Thongke_Load);
             this.grbTK.ResumeLayout(false);
@@ -387,7 +338,6 @@
         private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
-        private System.Windows.Forms.ToolStripMenuItem topToolStripMenuItem;
         private System.Windows.Forms.TextBox txtTongTN;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

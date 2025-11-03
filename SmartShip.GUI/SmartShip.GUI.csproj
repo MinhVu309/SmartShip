@@ -42,10 +42,21 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.16.0.18925.20022\lib\net40\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,6 +68,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ad\FrmAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ad\FrmAdmin.Designer.cs">
+      <DependentUpon>FrmAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,31 +104,43 @@
     <Compile Include="Login\FrmResetPassword.Designer.cs">
       <DependentUpon>FrmResetPassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login\FrmTaiXeND.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\FrmTaiXeND.Designer.cs">
+      <DependentUpon>FrmTaiXeND.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QLDH\Form1.cs">
+    <Compile Include="QLDH\frmDLDH.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLDH\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="QLDH\frmDLDH.Designer.cs">
+      <DependentUpon>frmDLDH.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLDH\TaoDH.cs">
+    <Compile Include="QLDH\frmQLSP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLDH\TaoDH.Designer.cs">
-      <DependentUpon>TaoDH.cs</DependentUpon>
+    <Compile Include="QLDH\frmQLSP.Designer.cs">
+      <DependentUpon>frmQLSP.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLDH\Thongke.cs">
+    <Compile Include="QLDH\frmTaoDH.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLDH\Thongke.Designer.cs">
-      <DependentUpon>Thongke.cs</DependentUpon>
+    <Compile Include="QLDH\frmTaoDH.Designer.cs">
+      <DependentUpon>frmTaoDH.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLDH\Top.cs">
+    <Compile Include="QLDH\frmThongke.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLDH\Top.Designer.cs">
-      <DependentUpon>Top.cs</DependentUpon>
+    <Compile Include="QLDH\frmThongke.Designer.cs">
+      <DependentUpon>frmThongke.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLDH\frmTop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLDH\frmTop.Designer.cs">
+      <DependentUpon>frmTop.cs</DependentUpon>
     </Compile>
     <Compile Include="QLKH\frmNguoiDung.cs">
       <SubType>Form</SubType>
@@ -137,6 +166,9 @@
     <Compile Include="QLNV\frmTaiXeEdit.Designer.cs">
       <DependentUpon>frmTaiXeEdit.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Ad\FrmAdmin.resx">
+      <DependentUpon>FrmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login\FrmForgotPassword.resx">
       <DependentUpon>FrmForgotPassword.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,6 +181,9 @@
     <EmbeddedResource Include="Login\FrmResetPassword.resx">
       <DependentUpon>FrmResetPassword.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Login\FrmTaiXeND.resx">
+      <DependentUpon>FrmTaiXeND.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -158,17 +193,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="QLDH\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="QLDH\frmDLDH.resx">
+      <DependentUpon>frmDLDH.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLDH\TaoDH.resx">
-      <DependentUpon>TaoDH.cs</DependentUpon>
+    <EmbeddedResource Include="QLDH\frmQLSP.resx">
+      <DependentUpon>frmQLSP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLDH\Thongke.resx">
-      <DependentUpon>Thongke.cs</DependentUpon>
+    <EmbeddedResource Include="QLDH\frmTaoDH.resx">
+      <DependentUpon>frmTaoDH.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLDH\Top.resx">
-      <DependentUpon>Top.cs</DependentUpon>
+    <EmbeddedResource Include="QLDH\frmThongke.resx">
+      <DependentUpon>frmThongke.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLDH\frmTop.resx">
+      <DependentUpon>frmTop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QLKH\frmNguoiDung.resx">
       <DependentUpon>frmNguoiDung.cs</DependentUpon>
@@ -194,9 +232,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Admin\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\SmartShip.BUS\SmartShip.BUS.csproj">
       <Project>{1d1a8a41-5768-4a49-8e34-5ed6bbb388af}</Project>
@@ -212,15 +248,6 @@
       <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
       <VersionMajor>2</VersionMajor>
       <VersionMinor>8</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="Microsoft.Office.Interop.Excel">
-      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>9</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>primary</WrapperTool>
       <Isolated>False</Isolated>

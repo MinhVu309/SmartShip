@@ -23,7 +23,17 @@ namespace BUS.Service
 
         public List<DonHang> GetByTaiXe(string maTaiXe)
         {
-            return db.DonHangs.Where(x => x.MaTaiXe == maTaiXe).ToList();
+            return db.DonHangs.Where(d => d.MaTaiXe == maTaiXe).ToList();
+        }
+
+        public void CapNhatTrangThai(string maDon, string trangThai)
+        {
+            var dh = db.DonHangs.Find(maDon);
+            if (dh != null)
+            {
+                dh.TrangThai = trangThai;
+                db.SaveChanges();
+            }
         }
 
         public void Them(DonHang dh)
@@ -50,7 +60,16 @@ namespace BUS.Service
             db.Entry(old).CurrentValues.SetValues(dh);
             db.SaveChanges();
         }
+        public List<DonHang> TimDonHang(string keyword)
+        {
+            if (string.IsNullOrEmpty(keyword))
+                return db.DonHangs.ToList();
 
+            // Cho phép tìm gần đúng 
+            return db.DonHangs
+                     .Where(d => d.MaDon.Contains(keyword))
+                     .ToList();
+        }
         public void Xoa(string id)
         {
             var dh = db.DonHangs.Find(id);
@@ -59,6 +78,12 @@ namespace BUS.Service
                 db.DonHangs.Remove(dh);
                 db.SaveChanges();
             }
+        }
+        public List<DonHang> GetDonHangByTaiXe(string maTaiXe)
+        {
+            return db.DonHangs
+                     .Where(d => d.MaTaiXe == maTaiXe)
+                     .ToList();
         }
     }
 }

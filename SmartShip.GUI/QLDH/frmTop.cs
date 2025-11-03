@@ -1,7 +1,5 @@
 ﻿using BUS.Service;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -12,14 +10,14 @@ using SmartShip.DAL.Model;
 
 namespace DA.GUI
 {
-    public partial class Top : Form
+    public partial class frmTop : Form
     {
         private readonly TaiXeService TaixeSV = new TaiXeService();
         private readonly NguoiDungService NguoiDungSv = new NguoiDungService();
         private readonly ChiTietDonHangService ChiTietDonHangSv = new ChiTietDonHangService();
         private readonly DonHangService donHangSv = new DonHangService();
 
-        public Top()
+        public frmTop()
         {
             InitializeComponent();
         }
@@ -48,13 +46,13 @@ namespace DA.GUI
                     SoDon = tx.TongDon
                 };
             }).ToList();
-
             dgvTNV.DataSource = data;
 
             // Thiết lập cột
             dgvTNV.Columns["STT"].HeaderText = "STT";
             dgvTNV.Columns["TenTaiXe"].HeaderText = "Tên Tài Xế";
             dgvTNV.Columns["SoDon"].HeaderText = "Số Đơn";
+            dgvTNV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         private void LoadTopKhachHang()
         {
@@ -148,7 +146,7 @@ namespace DA.GUI
         }
         private void Thoát_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
     }
 }

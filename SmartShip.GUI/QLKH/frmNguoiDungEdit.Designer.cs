@@ -1,16 +1,15 @@
-﻿namespace SmartShip.GUI.QLKH
+﻿namespace SmartShip.GUI
 {
     partial class frmNguoiDungEdit
     {
         /// <summary>
-        /// Required designer variable.
+        ///  Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Clean up any resources being used.
+        ///  Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,177 +21,189 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            this.pnlEdit = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblHoTen = new System.Windows.Forms.Label();
+            this.lblSDT = new System.Windows.Forms.Label();
+            this.lblDiaChi = new System.Windows.Forms.Label();
+            this.txtHoTen = new System.Windows.Forms.TextBox();
+            this.txtSDT = new System.Windows.Forms.TextBox();
+            this.txtDiaChi = new System.Windows.Forms.TextBox();
+            this.chkHoatDong = new System.Windows.Forms.CheckBox();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
-            this.chkHoatDong = new System.Windows.Forms.CheckBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtMaND = new System.Windows.Forms.TextBox();
-            this.txtHoTen = new System.Windows.Forms.TextBox();
-            this.txtSdt = new System.Windows.Forms.TextBox();
-            this.txtDiaChi = new System.Windows.Forms.TextBox();
-            this.pnlEdit.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnlEdit
+            // lblHoTen
             // 
-            this.pnlEdit.Controls.Add(this.label5);
-            this.pnlEdit.Controls.Add(this.btnLuu);
-            this.pnlEdit.Controls.Add(this.btnHuy);
-            this.pnlEdit.Controls.Add(this.chkHoatDong);
-            this.pnlEdit.Controls.Add(this.label4);
-            this.pnlEdit.Controls.Add(this.label3);
-            this.pnlEdit.Controls.Add(this.label2);
-            this.pnlEdit.Controls.Add(this.label1);
-            this.pnlEdit.Controls.Add(this.txtMaND);
-            this.pnlEdit.Controls.Add(this.txtHoTen);
-            this.pnlEdit.Controls.Add(this.txtSdt);
-            this.pnlEdit.Controls.Add(this.txtDiaChi);
-            this.pnlEdit.Location = new System.Drawing.Point(31, 28);
-            this.pnlEdit.Name = "pnlEdit";
-            this.pnlEdit.Size = new System.Drawing.Size(324, 373);
-            this.pnlEdit.TabIndex = 8;
+            this.lblHoTen.AutoSize = true;
+            this.lblHoTen.Location = new System.Drawing.Point(30, 30);
+            this.lblHoTen.Name = "lblHoTen";
+            this.lblHoTen.Size = new System.Drawing.Size(49, 16);
+            this.lblHoTen.TabIndex = 0;
+            this.lblHoTen.Text = "Họ tên:";
             // 
-            // label5
+            // lblSDT
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 237);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 16);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Hoạt động";
+            this.lblSDT.AutoSize = true;
+            this.lblSDT.Location = new System.Drawing.Point(30, 75);
+            this.lblSDT.Name = "lblSDT";
+            this.lblSDT.Size = new System.Drawing.Size(88, 16);
+            this.lblSDT.TabIndex = 1;
+            this.lblSDT.Text = "Số điện thoại:";
             // 
-            // btnLuu
+            // lblDiaChi
             // 
-            this.btnLuu.Location = new System.Drawing.Point(25, 288);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(87, 34);
-            this.btnLuu.TabIndex = 11;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.UseVisualStyleBackColor = true;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            this.lblDiaChi.AutoSize = true;
+            this.lblDiaChi.Location = new System.Drawing.Point(30, 120);
+            this.lblDiaChi.Name = "lblDiaChi";
+            this.lblDiaChi.Size = new System.Drawing.Size(50, 16);
+            this.lblDiaChi.TabIndex = 2;
+            this.lblDiaChi.Text = "Địa chỉ:";
             // 
-            // btnHuy
+            // txtHoTen
             // 
-            this.btnHuy.Location = new System.Drawing.Point(194, 288);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(87, 34);
-            this.btnHuy.TabIndex = 10;
-            this.btnHuy.Text = "Hủy";
-            this.btnHuy.UseVisualStyleBackColor = true;
-            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            this.txtHoTen.Location = new System.Drawing.Point(140, 27);
+            this.txtHoTen.Name = "txtHoTen";
+            this.txtHoTen.Size = new System.Drawing.Size(250, 22);
+            this.txtHoTen.TabIndex = 1;
+            // 
+            // txtSDT
+            // 
+            this.txtSDT.Location = new System.Drawing.Point(140, 72);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(250, 22);
+            this.txtSDT.TabIndex = 2;
+            // 
+            // txtDiaChi
+            // 
+            this.txtDiaChi.Location = new System.Drawing.Point(140, 117);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(250, 22);
+            this.txtDiaChi.TabIndex = 3;
             // 
             // chkHoatDong
             // 
             this.chkHoatDong.AutoSize = true;
-            this.chkHoatDong.Location = new System.Drawing.Point(105, 236);
+            this.chkHoatDong.Location = new System.Drawing.Point(140, 160);
             this.chkHoatDong.Name = "chkHoatDong";
-            this.chkHoatDong.Size = new System.Drawing.Size(18, 17);
-            this.chkHoatDong.TabIndex = 8;
+            this.chkHoatDong.Size = new System.Drawing.Size(92, 20);
+            this.chkHoatDong.TabIndex = 4;
+            this.chkHoatDong.Text = "Hoạt động";
             this.chkHoatDong.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // btnLuu
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 90);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 16);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Họ tên";
+            this.btnLuu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(150)))), ((int)(((byte)(90)))));
+            this.btnLuu.ForeColor = System.Drawing.Color.Black;
+            this.btnLuu.Location = new System.Drawing.Point(140, 200);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(90, 35);
+            this.btnLuu.TabIndex = 5;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
-            // label3
+            // btnHuy
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 142);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 16);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "SDT";
+            this.btnHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(150)))), ((int)(((byte)(90)))));
+            this.btnHuy.ForeColor = System.Drawing.Color.Black;
+            this.btnHuy.Location = new System.Drawing.Point(300, 200);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(90, 35);
+            this.btnHuy.TabIndex = 6;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = false;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // mau
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 191);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 16);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Địa chỉ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 16);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Mã người dùng";
-            // 
-            // txtMaND
-            // 
-            this.txtMaND.Location = new System.Drawing.Point(100, 37);
-            this.txtMaND.Name = "txtMaND";
-            this.txtMaND.Size = new System.Drawing.Size(202, 22);
-            this.txtMaND.TabIndex = 3;
-            // 
-            // txtHoTen
-            // 
-            this.txtHoTen.Location = new System.Drawing.Point(100, 87);
-            this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(181, 22);
-            this.txtHoTen.TabIndex = 2;
-            // 
-            // txtSdt
-            // 
-            this.txtSdt.Location = new System.Drawing.Point(100, 136);
-            this.txtSdt.Name = "txtSdt";
-            this.txtSdt.Size = new System.Drawing.Size(130, 22);
-            this.txtSdt.TabIndex = 1;
-            // 
-            // txtDiaChi
-            // 
-            this.txtDiaChi.Location = new System.Drawing.Point(100, 185);
-            this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(202, 22);
-            this.txtDiaChi.TabIndex = 0;
-            // 
+            // ====================
+            // 🎨 Theme chỉnh màu frmNguoiDungEdit
+            // ====================
+            System.Drawing.Color mossGreen = System.Drawing.Color.FromArgb(40, 60, 60);      // Xanh rêu sẫm
+            System.Drawing.Color goldButton = System.Drawing.Color.FromArgb(180, 150, 90);   // Vàng đồng
+            System.Drawing.Color goldAccent = System.Drawing.Color.FromArgb(200, 170, 110);  // Vàng sáng hơn
+            System.Drawing.Color textColor = System.Drawing.Color.White;
+
+            // Nền form
+            this.BackColor = mossGreen;
+            this.ForeColor = textColor;
+
+            // Label
+            this.lblHoTen.ForeColor = goldAccent;
+            this.lblSDT.ForeColor = goldAccent;
+            this.lblDiaChi.ForeColor = goldAccent;
+
+            // TextBox
+            this.txtHoTen.BackColor = System.Drawing.Color.FromArgb(60, 80, 80);
+            this.txtHoTen.ForeColor = System.Drawing.Color.White;
+            this.txtHoTen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+
+            this.txtSDT.BackColor = System.Drawing.Color.FromArgb(60, 80, 80);
+            this.txtSDT.ForeColor = System.Drawing.Color.White;
+            this.txtSDT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+
+            this.txtDiaChi.BackColor = System.Drawing.Color.FromArgb(60, 80, 80);
+            this.txtDiaChi.ForeColor = System.Drawing.Color.White;
+            this.txtDiaChi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+
+            // CheckBox
+            this.chkHoatDong.ForeColor = textColor;
+            this.chkHoatDong.BackColor = mossGreen;
+
+            // Nút Lưu
+            this.btnLuu.BackColor = goldButton;
+            this.btnLuu.ForeColor = System.Drawing.Color.White;
+            this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLuu.FlatAppearance.BorderSize = 2;
+            this.btnLuu.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnLuu.FlatAppearance.MouseOverBackColor = goldAccent;
+            this.btnLuu.FlatAppearance.MouseDownBackColor = goldAccent;
+
+            // Nút Hủy
+            this.btnHuy.BackColor = goldButton;
+            this.btnHuy.ForeColor = System.Drawing.Color.White;
+            this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHuy.FlatAppearance.BorderSize = 2;
+            this.btnHuy.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnHuy.FlatAppearance.MouseOverBackColor = goldAccent;
+            this.btnHuy.FlatAppearance.MouseDownBackColor = goldAccent;
+
             // frmNguoiDungEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(388, 450);
-            this.Controls.Add(this.pnlEdit);
+            this.ClientSize = new System.Drawing.Size(440, 260);
+            this.Controls.Add(this.btnHuy);
+            this.Controls.Add(this.btnLuu);
+            this.Controls.Add(this.chkHoatDong);
+            this.Controls.Add(this.txtDiaChi);
+            this.Controls.Add(this.txtSDT);
+            this.Controls.Add(this.txtHoTen);
+            this.Controls.Add(this.lblDiaChi);
+            this.Controls.Add(this.lblSDT);
+            this.Controls.Add(this.lblHoTen);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "frmNguoiDungEdit";
-            this.Text = "frmNguoiDungEdit";
-            this.pnlEdit.ResumeLayout(false);
-            this.pnlEdit.PerformLayout();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Chỉnh sửa người dùng";
+            this.Load += new System.EventHandler(this.frmNguoiDungEdit_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel pnlEdit;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblHoTen;
+        private System.Windows.Forms.Label lblSDT;
+        private System.Windows.Forms.Label lblDiaChi;
+        private System.Windows.Forms.TextBox txtHoTen;
+        private System.Windows.Forms.TextBox txtSDT;
+        private System.Windows.Forms.TextBox txtDiaChi;
+        private System.Windows.Forms.CheckBox chkHoatDong;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnHuy;
-        private System.Windows.Forms.CheckBox chkHoatDong;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtMaND;
-        private System.Windows.Forms.TextBox txtHoTen;
-        private System.Windows.Forms.TextBox txtSdt;
-        private System.Windows.Forms.TextBox txtDiaChi;
     }
 }

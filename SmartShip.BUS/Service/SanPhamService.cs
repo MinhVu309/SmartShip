@@ -42,7 +42,7 @@ namespace BUS.Service
         }
 
         // Xóa sản phẩm
-        public void Xoa(int id)
+        public void Xoa(string id)
         {
             var sp = db.SanPhams.Find(id);
             if (sp != null)

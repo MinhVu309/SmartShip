@@ -7,24 +7,23 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
+using BUS.Service;
 
 
 namespace SmartShip.GUI
 {
     public partial class frmNguoiDung : Form
     {
-        NguoiDungService bus = new NguoiDungService(new NguoiDungRepository());
-        string action = ""; // "add" hoặc "edit"
+        NguoiDungService bus = new NguoiDungService();
+        string action = ""; 
         public frmNguoiDung()
         {
             InitializeComponent();
-            // ✅ Set màu nền Form
-            this.BackColor = System.Drawing.Color.FromArgb(40, 60, 60);
+            
 
-            // ✅ Format DataGridView
+            
             this.dgvNguoiDung.BackgroundColor = System.Drawing.Color.FromArgb(40, 60, 60);
             this.dgvNguoiDung.GridColor = System.Drawing.Color.FromArgb(180, 150, 90);
             this.dgvNguoiDung.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(40, 60, 60);
@@ -32,31 +31,17 @@ namespace SmartShip.GUI
             this.dgvNguoiDung.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(200, 180, 80);
             this.dgvNguoiDung.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
 
-            // ✅ Header DataGridView
+            
             this.dgvNguoiDung.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(60, 80, 80);
             this.dgvNguoiDung.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.White;
             this.dgvNguoiDung.EnableHeadersVisualStyles = false;
 
-            // ✅ Button Style màu vàng đồng
-            System.Drawing.Color vangDong = System.Drawing.Color.FromArgb(180, 150, 90);
+            
 
-            this.btnThem.BackColor = vangDong;
-            this.btnSua.BackColor = vangDong;
-            this.btnLamMoi.BackColor = vangDong;
-            this.btnTimKiem.BackColor = vangDong;
-
-            this.btnThem.ForeColor = System.Drawing.Color.Black;
-            this.btnSua.ForeColor = System.Drawing.Color.Black;
-            this.btnLamMoi.ForeColor = System.Drawing.Color.Black;
-            this.btnTimKiem.ForeColor = System.Drawing.Color.Black;
-
-            // ✅ TextBox Search
-            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(60, 80, 80);
-            this.txtSearch.ForeColor = System.Drawing.Color.White;
-            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            
 
         }
-        //
+        
 
         private void frmNguoiDung_Load(object sender, EventArgs e)
         {
@@ -64,38 +49,46 @@ namespace SmartShip.GUI
         }
         private void LoadGrid()
         {
-            dgvNguoiDung.DataSource = bus.GetAll();
-            // Ẩn các cột không cần thiết
-            dgvNguoiDung.Columns["ResetCode"].Visible = false;
-            dgvNguoiDung.Columns["DiaChi"].Visible = false;
-            dgvNguoiDung.Columns["DonHang"].Visible = false;
-            dgvNguoiDung.Columns["Taikhoan"].Visible = false;
-            dgvNguoiDung.Columns["Taixe"].Visible = false;
+            var khachHangList = bus.GetAll().Where(nd => nd.VaiTro == "KhachHang").ToList();
 
-            // Format lại tên cột chính
-            dgvNguoiDung.Columns["MaNguoiDung"].HeaderText = "Mã người dùng";
-            dgvNguoiDung.Columns["HoTen"].HeaderText = "Họ tên";
-            dgvNguoiDung.Columns["SDT"].HeaderText = "Số điện thoại";
-            dgvNguoiDung.Columns["DiaChiMacDinh"].HeaderText = "Địa chỉ";
-            dgvNguoiDung.Columns["HoatDong"].HeaderText = "Hoạt động";
+            dgvNguoiDung.DataSource = khachHangList;
+
+            
+            string[] cotCanAn = { "DiaChis", "DonHangs", "Taikhoan", "Taixes", "ResetCode", "VaiTro" };
+            foreach (string tenCot in cotCanAn)
+            {
+                if (dgvNguoiDung.Columns.Contains(tenCot))
+                    dgvNguoiDung.Columns[tenCot].Visible = false;
+            }
+
+           
+            if (dgvNguoiDung.Columns.Contains("MaNguoiDung"))
+                dgvNguoiDung.Columns["MaNguoiDung"].HeaderText = "Mã người dùng";
+
+            if (dgvNguoiDung.Columns.Contains("MaTaiKhoan"))
+                dgvNguoiDung.Columns["MaTaiKhoan"].HeaderText = "Mã tài khoản";
+
+            if (dgvNguoiDung.Columns.Contains("HoTen"))
+                dgvNguoiDung.Columns["HoTen"].HeaderText = "Họ tên";
+
+            if (dgvNguoiDung.Columns.Contains("SDT"))
+                dgvNguoiDung.Columns["SDT"].HeaderText = "Số điện thoại";
+
+            if (dgvNguoiDung.Columns.Contains("DiaChiMacDinh"))
+                dgvNguoiDung.Columns["DiaChiMacDinh"].HeaderText = "Địa chỉ mặc định";
+
+            if (dgvNguoiDung.Columns.Contains("Email"))
+                dgvNguoiDung.Columns["Email"].HeaderText = "Email";
+
+            if (dgvNguoiDung.Columns.Contains("HoatDong"))
+                dgvNguoiDung.Columns["HoatDong"].HeaderText = "Hoạt động";
+
+            if (dgvNguoiDung.Columns.Contains("NgayTao"))
+                dgvNguoiDung.Columns["NgayTao"].HeaderText = "Ngày tạo";
 
             dgvNguoiDung.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
         }
-
-        
-
-        
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            frmNguoiDungEdit frm = new frmNguoiDungEdit("add");
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                bus.Add(frm.nguoiDung);
-                LoadGrid();
-            }
-        }
-
         private void btnSua_Click(object sender, EventArgs e)
         {
             if (dgvNguoiDung.CurrentRow == null) return;
@@ -112,13 +105,62 @@ namespace SmartShip.GUI
             frmNguoiDungEdit frm = new frmNguoiDungEdit("edit", nd);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                bus.Update(frm.nguoiDung);
+                bus.CapNhat(frm.nguoiDung);
                 LoadGrid();
             }
         }
 
-       
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            try
+            {
 
-       
+                txtSearch.Text = string.Empty;
+
+
+                LoadGrid();
+
+
+                txtSearch.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra khi làm mới dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string keyword = txtSearch.Text.Trim().ToLower();
+
+            if (string.IsNullOrEmpty(keyword))
+            {
+                MessageBox.Show("Vui lòng nhập từ khóa cần tìm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            try
+            {
+               
+                var ds = bus.GetAll();
+
+                var ketQua = ds.Where(nd =>
+                    (nd.HoTen != null && nd.HoTen.ToLower().Contains(keyword)) ||
+                    (nd.SDT != null && nd.SDT.ToLower().Contains(keyword)) ||
+                    (nd.MaNguoiDung != null && nd.MaNguoiDung.ToLower().Contains(keyword))
+                ).ToList();
+
+              
+                dgvNguoiDung.DataSource = ketQua;
+
+              
+                if (ketQua.Count == 0)
+                    MessageBox.Show("Không tìm thấy kết quả nào phù hợp!", "Kết quả", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tìm kiếm: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

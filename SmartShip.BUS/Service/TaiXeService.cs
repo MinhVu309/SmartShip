@@ -25,6 +25,16 @@ namespace BUS.Service
         {
             return db.Taixes.FirstOrDefault(x => x.MaNguoiDung == maNguoiDung);
         }
+        public Taixe GetByTaiKhoan(string maTaiKhoan)
+        {
+            var result = (from tx in db.Taixes
+                          join nd in db.NguoiDungs on tx.MaNguoiDung equals nd.MaNguoiDung
+                          join tk in db.Taikhoans on nd.MaTaiKhoan equals tk.MaTaiKhoan
+                          where tk.MaTaiKhoan == maTaiKhoan
+                          select tx).FirstOrDefault();
+
+            return result;
+        }
 
         public void Them(Taixe tx)
         {
@@ -33,11 +43,14 @@ namespace BUS.Service
         }
         public void CapNhat(Taixe tx)
         {
-            var old = db.Taixes.Find(tx.MaTaiXe);
-            if (old != null)
+            var existing = db.Taixes.Find(tx.MaTaiXe);
+            if (existing != null)
             {
-                db.Entry(old).CurrentValues.SetValues(tx);
-                db.SaveChanges();
+                existing.LoaiXe = tx.LoaiXe;
+                existing.BienSo = tx.BienSo;
+                existing.TongDon = tx.TongDon;
+                existing.SanSang = tx.SanSang;
+                db.SaveChanges(); // ⚠️ PHẢI CÓ DÒNG NÀY!
             }
         }
 
@@ -49,6 +62,20 @@ namespace BUS.Service
                 db.Taixes.Remove(tx);
                 db.SaveChanges();
             }
+        }
+        public DTO GetThongTinTaiXe(string maTaiXe)
+        {
+            var result = (from tx in db.Taixes
+                          join nd in db.NguoiDungs on tx.MaNguoiDung equals nd.MaNguoiDung
+                          where tx.MaTaiXe == maTaiXe
+                          select new DTO
+                          {
+                              HoTen = nd.HoTen,
+                              SDT = nd.SDT,
+                              BienSo = tx.BienSo
+                          }).FirstOrDefault();
+
+            return result;
         }
     }
 }

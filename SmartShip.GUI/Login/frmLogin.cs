@@ -1,5 +1,7 @@
-﻿using DangNhap3Lop;
+﻿using BUS.Service;
+using SmartShip.GUI.Login;  
 using SmartShip.BUS.Service;
+using SmartShip.GUI.Ad;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,12 +21,20 @@ namespace SmartShip.GUI.Login
         {
             InitializeComponent();
             _taiKhoanService = new TaiKhoanService();
+            this.Resize += frmLogin_Resize;
         }
 
-        private void frmLogin_Load(object sender, EventArgs e)
+        private void frmLogin_Resize(object sender, EventArgs e)
         {
-
+            // Căn giữa panel đăng nhập
+            if (panelLogin != null)
+            {
+                panelLogin.Left = (this.ClientSize.Width - panelLogin.Width) / 2;
+                panelLogin.Top = (this.ClientSize.Height - panelLogin.Height) / 2;
+            }
         }
+
+        
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
@@ -73,6 +83,33 @@ namespace SmartShip.GUI.Login
 
                 // 👉 Mở form chính hoặc ẩn form đăng nhập
                 this.Hide();
+                if (user != null)
+                {
+                    string role = user.VaiTro?.ToLower();
+
+                    if (role == "admin")
+                    {
+                        FrmAdmin frm = new FrmAdmin();
+                        frm.Show();
+                        this.Hide();
+                    }
+                    else if (role == "taixe" || role == "shipper" || role == "tài xế")
+                    {
+                        TaiXeService taiXeService = new TaiXeService();
+                        var taiXe = taiXeService.GetByTaiKhoan(user.MaTaiKhoan);
+
+                        if (taiXe != null)
+                        {
+                            FrmTaiXeND frmTaiXeND = new FrmTaiXeND(taiXe.MaTaiXe);
+                            frmTaiXeND.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy thông tin tài xế tương ứng!");
+                        }
+                    }
+                }
                 // new MainForm().Show(); // nếu có form chính
             }
             else
